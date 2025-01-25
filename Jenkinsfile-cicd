@@ -8,6 +8,11 @@ pipeline {
        SCANNER_HOME = tool 'sonar-scanner'
    }
    stages {
+      stage('clean workspace'){
+            steps{
+                cleanWs()
+            }
+        }
        stage('Repo Clone') {
            steps {
                echo "git clone......."
